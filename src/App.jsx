@@ -1,5 +1,5 @@
 import './App.css';
-import Dashboard from './components/Dashboard';
+import Dashboard from './pages/Dashboard';
 import 'semantic-ui-css/semantic.min.css'
 
 function App() {
