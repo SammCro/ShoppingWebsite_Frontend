@@ -1,8 +1,15 @@
-import "./App.css";
+//Comeponents
 import Dashboard from "./pages/Dashboard";
+import Navi from "./components/Navi";
+
+//Services 
+
+
+//Styling files
+import "./App.css";
 import "semantic-ui-css/semantic.min.css";
 
-import Navi from "./components/Navi";
+//Semantic UI components
 import { Container } from "semantic-ui-react";
 
 function App() {
