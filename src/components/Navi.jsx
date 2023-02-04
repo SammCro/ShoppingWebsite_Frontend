@@ -1,18 +1,22 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Container, Menu } from "semantic-ui-react";
+
+import  {useNavigate} from 'react-router-dom';
+
 import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
+import CartSummary from "./CartSummary";
 
 export default function Navi() {
-  
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const navigate = useNavigate();
   function handleSignOut() {
-    setIsAuthenticated(false)
-   
+    navigate("/products")
+    setIsAuthenticated(false);
   }
 
   function handleSignIn() {
-    setIsAuthenticated(true)
+    setIsAuthenticated(true);
   }
 
   return (
@@ -22,8 +26,12 @@ export default function Navi() {
           <Menu.Item name="home" />
           <Menu.Item name="messages" />
           <Menu.Menu position="right">
-            {isAuthenticated?<SignedIn signOut={handleSignOut}/>
-            :<SignedOut signIn={handleSignIn}/>}  
+            <CartSummary></CartSummary>
+            {isAuthenticated ? (
+              <SignedIn signOut={handleSignOut} />
+            ) : (
+              <SignedOut signIn={handleSignIn} />
+            )}
           </Menu.Menu>
         </Container>
       </Menu>

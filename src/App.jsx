@@ -1,5 +1,5 @@
 //Comeponents
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./components/Dashboard";
 import Navi from "./components/Navi";
 
 //Services 

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button, Menu } from 'semantic-ui-react'
 
-export default function SignedOut({signIn}) {
+export default function SignedOut(props) {
+    const {signIn} = props;
     return (
         <div>
             <Menu.Item>

@@ -1,11 +1,18 @@
 import React from "react";
-import ProductService from "../services/productService";
 
 import { useEffect } from "react";
 import { useState } from "react";
+import ProductService from "../services/productService";
+
+import { Link } from "react-router-dom";
+
 
 import { Icon, Menu, Table } from "semantic-ui-react";
 
+
+//eğer jsx filelarda proporty içine birşeyler yazmak istersen '/products${product.id}'
+
+//useEffectin sonundaki array notationu hangi stateler değiştirildiğinde useEffect çalışır onu gösterir.
 export default function ProductList() {
   const [products, setProducts] = useState([]);
 
@@ -14,7 +21,7 @@ export default function ProductList() {
     productService
       .getProducts()
       .then((result) => setProducts(result.data));
-  });
+  },[]);
 
   return (
     <div>
@@ -30,8 +37,8 @@ export default function ProductList() {
 
         <Table.Body>
           {products.map((product) => (
-            <Table.Row key={product.id}>
-              <Table.Cell>{product.productName}</Table.Cell>
+            <Table.Row key={product.id} >
+              <Table.Cell><Link to={`/products/${product.id}`} state={{samet:"s"}}>{product.productName}</Link></Table.Cell>
               <Table.Cell>{product.unitPrice}</Table.Cell>
               <Table.Cell>{product.unitsInStock}</Table.Cell>
               <Table.Cell>{product.quantityPerUnit}</Table.Cell>
