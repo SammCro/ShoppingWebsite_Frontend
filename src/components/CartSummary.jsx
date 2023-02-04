@@ -1,17 +1,7 @@
-import React from "react";
-
-import {Dropdown} from "semantic-ui-react";
+import React from 'react'
 
 export default function CartSummary() {
   return (
-    <div>
-      <Dropdown item text="Language">
-        <Dropdown.Menu>
-          <Dropdown.Item>English</Dropdown.Item>
-          <Dropdown.Item>Russian</Dropdown.Item>
-          <Dropdown.Item>Spanish</Dropdown.Item>
-        </Dropdown.Menu>
-      </Dropdown>
-    </div>
-  );
+    <div>CartSummary</div>
+  )
 }

@@ -1,5 +1,4 @@
 import React, {useState} from "react";
-import CartSummary from "./CartSummary";
 import { Container, Menu } from "semantic-ui-react";
 import SignedOut from "./SignedOut";
 import SignedIn from "./SignedIn";
@@ -22,7 +21,6 @@ export default function Navi() {
         <Container>
           <Menu.Item name="home" />
           <Menu.Item name="messages" />
-          <CartSummary></CartSummary>
           <Menu.Menu position="right">
             {isAuthenticated?<SignedIn signOut={handleSignOut}/>
             :<SignedOut signIn={handleSignIn}/>}  
