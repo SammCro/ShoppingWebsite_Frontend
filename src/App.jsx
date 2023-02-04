@@ -2,6 +2,8 @@
 import Dashboard from "./components/Dashboard";
 import Navi from "./components/Navi";
 
+
+import { ToastContainer } from 'react-toastify';
 //Services 
 
 
@@ -19,6 +21,7 @@ function App() {
       <Container className="main">
         <Dashboard></Dashboard>
       </Container>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
