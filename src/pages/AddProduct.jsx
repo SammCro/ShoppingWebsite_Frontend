@@ -1,9 +1,11 @@
 import React from "react";
 
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import { FormField, Button, Label } from "semantic-ui-react";
+import { Formik, Form } from "formik";
+import { Button } from "semantic-ui-react";
 
 import * as Yup from "yup";
+
+import CustomFormController from "../utilities/CustomFormController";
 
 function AddProduct() {
   const initalValues = { productName: "", unitPrice: 10 };
@@ -22,24 +24,8 @@ function AddProduct() {
         }}
       >
         <Form className="ui form">
-          <FormField>
-            <Field name="productName" placeholder="Product Name"></Field>
-            <ErrorMessage
-              name="productName"
-              render={(error) => (
-                <Label pointing basic content={error} color="red"></Label>
-              )}
-            ></ErrorMessage>
-          </FormField>
-          <FormField>
-            <Field name="unitPrice" placeholder="Unit Price"></Field>
-            <ErrorMessage
-              name="unitPrice"
-              render={(error) => (
-                <Label pointing basic content={error} color="red"></Label>
-              )}
-            ></ErrorMessage>
-          </FormField>
+          <CustomFormController name="productName" placeholder="Product Name"></CustomFormController>
+          <CustomFormController name="unitPrice" placeholder="Unit Price"></CustomFormController>
           <Button color="green" fluid type="submit">
             Add New Product
           </Button>
