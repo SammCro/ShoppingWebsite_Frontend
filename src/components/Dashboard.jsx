@@ -10,6 +10,7 @@ import CartDetail from "../pages/CartDetail";
 
 //Semantic UI components
 import { Grid, GridColumn, GridRow } from "semantic-ui-react";
+import AddProduct from "../pages/AddProduct";
 
 
 //Categories dashboard da hep olacağı için routes içine konulmuyor.
@@ -29,6 +30,7 @@ function Dashboard() {
               <Route exact path="/products/" element={<ProductList/>}></Route>
               <Route path="/products/:id" element={<ProductDetail/>}></Route>
               <Route exact path="/cartDetail" element={<CartDetail/>}></Route>
+              <Route exact path="/products/addProduct" element={<AddProduct></AddProduct>}></Route>
             </Routes>
           </GridColumn>
         </GridRow>
